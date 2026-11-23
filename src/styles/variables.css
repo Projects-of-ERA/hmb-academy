@@ -1,0 +1,12 @@
+:root {
+  /* COLORS */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark-gray: #41413f;
+  --color-light-gray: #abc1b3;
+
+  /* FONTS */
+  --font-primary: 'HeliosC', Arial, sans-serif;
+  --font-condensed: 'HeliosCondC', Arial, sans-serif;
+  --font-condensed-black: 'HeliosCondBlack', Arial, sans-serif;
+}

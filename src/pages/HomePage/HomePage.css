@@ -1,0 +1,14 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.home-page h1 {
+  color: var(--color-dark-gray);
+  font-family: var(--font-condensed-black);
+  font-size: clamp(48px, 8vw, 120px);
+  text-transform: uppercase;
+}
