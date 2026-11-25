@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: min(100svh, 999px);
+  background-image: url('/images/HomePage/hero/hero-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 260px;
+  padding-bottom: 60px;
+}
+
+/* TITLE */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 7.3vw, 142px);
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hero-title > span {
+  display: block;
+}
+
+.hero-title-outline {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+  text-shadow: none;
+}
+
+/* BUTTON */
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 586px;
+  max-width: 100%;
+  min-height: 80px;
+  padding: 20px 24px;
+  background-color: #c8102e;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button img {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero-button:hover {
+  background-color: #a80d26;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .hero-content {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 7vw, 90px);
+  }
+
+  .hero-button {
+    width: 480px;
+    min-height: 72px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    background-position: center;
+  }
+
+  .hero-content {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 9vw, 70px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-button {
+    width: 100%;
+    min-height: 64px;
+    gap: 12px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .hero-button img {
+    width: 22px;
+  }
+}

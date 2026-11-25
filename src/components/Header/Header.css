@@ -1,0 +1,246 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  color: var(--color-white);
+}
+
+.header-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 110px;
+  padding-top: 20px;
+}
+
+/* BOTTOM LINE */
+.header-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 1024px) {
+  .header-inner::after {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+/* LOGO */
+.header-logo {
+  justify-self: start;
+  display: block;
+  width: 108px;
+  flex-shrink: 0;
+}
+
+.header-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* NAVIGATION */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 120px);
+  margin: 0;
+}
+
+.header-link {
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: var(--color-light-gray);
+}
+
+/* ACTIONS */
+.header-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  align-self: end;
+  flex-shrink: 0;
+}
+
+/* LANGUAGE SWITCHER */
+.header-languages {
+  position: relative;
+  width: 156px;
+  height: 54px;
+  border: none;
+  overflow: visible;
+}
+
+.header-languages::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(100% / 3);
+  right: 0;
+
+  border: 1px solid var(--color-white);
+  border-left: none;
+  border-radius: 0 16px 0 0;
+
+  pointer-events: none;
+}
+
+.header-language {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+  color: var(--color-white);
+
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+
+  transform: translateX(calc(var(--slot) * 100%));
+  transition: color 0.2s ease;
+}
+
+.header-language.is-active {
+  z-index: 2;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.header-language.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 100%;
+
+  width: 50px;
+  height: 100%;
+
+  background-color: var(--color-white);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+  pointer-events: none;
+}
+
+.header-language:not(.is-active):hover {
+  color: var(--color-light-gray);
+}
+
+/* MOBILE MENU BUTTON */
+.header-menu-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+}
+
+.header-menu-toggle span {
+  width: 26px;
+  height: 2px;
+  background-color: var(--color-white);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* TABLET / MOBILE */
+@media (max-width: 1100px) {
+  .header-inner {
+    min-height: 90px;
+  }
+
+  .header-logo {
+    width: 90px;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 0;
+    padding: 30px 24px;
+    background-color: var(--color-black);
+  }
+
+  .header-nav.is-open {
+    display: flex;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    gap: 24px;
+  }
+
+  .header-menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-inner {
+    min-height: 76px;
+  }
+
+  .header-logo {
+    width: 76px;
+  }
+
+  .header-actions {
+    gap: 16px;
+  }
+
+  .header-languages {
+    width: 120px;
+    height: 42px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .header-language {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-language,
+  .header-link,
+  .header-menu-toggle span {
+    transition: none;
+  }
+}
