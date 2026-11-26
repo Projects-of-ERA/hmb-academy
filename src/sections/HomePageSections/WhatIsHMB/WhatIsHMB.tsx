@@ -27,6 +27,7 @@ const cards = [
     linkText: 'Learn More About Buhurt',
     href: '#buhurt',
   },
+
   {
     id: 'duels',
     title: 'Duels:',
@@ -39,6 +40,7 @@ const cards = [
     linkText: 'Learn More About Duels',
     href: '#duels',
   },
+
   {
     id: 'professional-fights',
     title: 'Professional Fights:',

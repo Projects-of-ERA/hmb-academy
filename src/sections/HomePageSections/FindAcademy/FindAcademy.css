@@ -1,0 +1,351 @@
+.find-academy {
+  width: 100%;
+  min-height: 860px;
+  background-image: url('/images/HomePage/academy/background.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.find-academy-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* TITLE */
+.find-academy-title {
+  margin-bottom: 60px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(56px, 6.25vw, 120px);
+  font-weight: 700;
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.find-academy-title span {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px var(--color-white);
+}
+
+/* COUNTRY TABS */
+.find-academy-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  height: 80px;
+}
+
+.find-academy-tab {
+  position: relative;
+  width: 350px;
+  height: 100%;
+  padding: 0 30px;
+
+  border: 0;
+  border-top: 2px solid var(--color-white);
+  background-color: transparent;
+  color: var(--color-white);
+
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.3vw, 44px);
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* FIRST TAB LEFT BORDER */
+.find-academy-tab:first-child {
+  border-left: 2px solid var(--color-white);
+}
+
+.find-academy-tab.is-active {
+  z-index: 2;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* FRANCE DIAGONAL CUT */
+.find-academy-tab:last-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  width: 70px;
+  height: 100%;
+
+  background-color: transparent;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+}
+
+/* ACTIVE FRANCE TRIANGLE */
+.find-academy-tab:last-child.is-active::after {
+  background-color: var(--color-white);
+}
+
+/* FRANCE DIAGONAL BORDER */
+.find-academy-tab:last-child::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 99.3%;
+
+  width: 70px;
+  height: 103%;
+
+  background-color: var(--color-white);
+  clip-path: polygon(0 0, 3px 0, 100% 100%, calc(100% - 3px) 100%);
+
+  pointer-events: none;
+}
+
+/* CARDS */
+.find-academy-cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  border: 2px solid var(--color-white);
+}
+
+/* CARD */
+.find-academy-card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 30% minmax(0, 1fr);
+  gap: 30px;
+  min-width: 0;
+  /* min-height: 420px; */
+  padding: 20px;
+
+  background-color: transparent;
+  color: var(--color-white);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ACTIVE CARD */
+.find-academy-card.is-active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* IMAGE */
+.find-academy-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.find-academy-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ACADEMY LOGO */
+.find-academy-logo {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 110px;
+  min-height: 106px;
+
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+/* CONTENT */
+.find-academy-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: space-between;
+  gap: 20px; */
+  height: 360px;
+}
+
+.find-academy-counter {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.find-academy-counter span {
+  color: var(--color-light-gray);
+}
+
+.find-academy-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.find-academy-name {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.3vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.find-academy-name span {
+  color: var(--color-red);
+}
+
+.find-academy-subtitle {
+  color: var(--color-red);
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.find-academy-description {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* LINK */
+.find-academy-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: inherit;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.find-academy-link img {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
+  filter: invert(1);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.find-academy-card.is-active .find-academy-link img {
+  filter: invert(0);
+}
+
+.find-academy-link:hover img {
+  transform: translateX(6px);
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .find-academy {
+    min-height: auto;
+  }
+
+  .find-academy-title {
+    font-size: clamp(48px, 6vw, 80px);
+  }
+
+  .find-academy-tab {
+    width: 220px;
+    height: 65px;
+    font-size: 30px;
+  }
+
+  .find-academy-tabs {
+    height: 65px;
+  }
+
+  .find-academy-tab::after,
+  .find-academy-tab:last-child:not(.is-active)::before {
+    width: 45px;
+  }
+
+  .find-academy-card {
+    grid-template-columns: 1fr;
+  }
+
+  .find-academy-image {
+    height: 260px;
+    min-height: 0;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .find-academy-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .find-academy-title {
+    margin-bottom: 50px;
+    font-size: clamp(36px, 8vw, 56px);
+  }
+
+  .find-academy-tabs {
+    height: 54px;
+  }
+
+  .find-academy-tab {
+    width: 120px;
+    height: 54px;
+    padding: 0 16px;
+    font-size: 24px;
+  }
+
+  .find-academy-tab::after,
+  .find-academy-tab:last-child:not(.is-active)::before {
+    width: 30px;
+  }
+
+  .find-academy-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .find-academy-card {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .find-academy-content {
+    gap: 24px;
+  }
+
+  .find-academy-name {
+    font-size: 28px;
+  }
+
+  .find-academy-description {
+    font-size: 16px;
+  }
+
+  .find-academy-link {
+    font-size: 18px;
+  }
+}
