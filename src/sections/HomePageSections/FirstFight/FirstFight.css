@@ -1,0 +1,322 @@
+.first-fight {
+  position: relative;
+  width: 100%;
+  background-image: url('/images/HomePage/first-fight/background.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.first-fight-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* INTRO */
+.first-fight-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* TITLE */
+.first-fight-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 4.25vw, 90px);
+  font-weight: 700;
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-right: 20rem;
+}
+
+.first-fight-title span {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+}
+
+/* DESCRIPTION */
+.first-fight-description {
+  max-width: 870px;
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-left: 33rem;
+}
+
+/* STEPS */
+.first-fight-steps {
+  --step-cut: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  width: 100%;
+  /* min-height: 245px; */
+}
+
+/* STEP */
+.first-fight-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+  padding: 35px 45px;
+
+  font-family: var(--font-primary);
+}
+
+/* FIRST STEP - OUTLINE */
+.first-fight-step:first-child {
+  z-index: 3;
+  margin-right: calc(var(--step-cut) * -1);
+  padding-right: calc(var(--step-cut) + 30px);
+
+  background-color: var(--color-white);
+
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--step-cut)) 0,
+    100% 50%,
+    calc(100% - var(--step-cut)) 100%,
+    0 100%
+  );
+}
+
+/* FIRST STEP INNER BACKGROUND */
+.first-fight-step:first-child::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+
+  background-image: url('/images/HomePage/first-fight/background.webp');
+  background-position: center;
+  background-size: cover;
+
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--step-cut)) 0,
+    100% 50%,
+    calc(100% - var(--step-cut)) 100%,
+    0 100%
+  );
+}
+
+/* SECOND STEP */
+.first-fight-step:nth-child(2) {
+  z-index: 2;
+
+  margin-left: 0;
+  margin-right: calc(var(--step-cut) * -1);
+
+  padding-left: calc(var(--step-cut) + 30px);
+  padding-right: calc(var(--step-cut) + 30px);
+
+  background-color: var(--color-white);
+  color: var(--color-black);
+
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--step-cut)) 0,
+    100% 50%,
+    calc(100% - var(--step-cut)) 100%,
+    0 100%,
+    var(--step-cut) 50%
+  );
+}
+
+/* THIRD STEP */
+.first-fight-step:last-child {
+  z-index: 1;
+  padding-left: calc(var(--step-cut) + 30px);
+
+  background-color: var(--color-red);
+  color: var(--color-white);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, var(--step-cut) 50%);
+}
+
+/* STEP NUMBER */
+.first-fight-step-number {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 4.25vw, 82px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* STEP CONTENT */
+.first-fight-step-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.first-fight-step-title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.1vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.first-fight-step-description {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* BUTTON */
+.first-fight-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 20px;
+  width: 580px;
+  max-width: 100%;
+  min-height: 80px;
+  margin-top: 80px;
+  padding: 20px 24px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.04em;
+  transition: background-color 0.3s ease;
+}
+
+.first-fight-button img {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.first-fight-button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.first-fight-button:hover img {
+  transform: translateX(6px);
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .first-fight,
+  .first-fight-container {
+    min-height: auto;
+  }
+
+  .first-fight-intro {
+    align-items: center;
+  }
+
+  .first-fight-title {
+    font-size: clamp(42px, 6vw, 70px);
+    white-space: normal;
+  }
+
+  .first-fight-description {
+    max-width: 100%;
+    font-size: 20px;
+  }
+
+  .first-fight-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .first-fight-step,
+  .first-fight-step:first-child,
+  .first-fight-step:nth-child(2),
+  .first-fight-step:last-child {
+    min-height: 150px;
+    margin: 0;
+    padding: 24px;
+    clip-path: none;
+  }
+
+  .first-fight-step:first-child {
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+  }
+
+  .first-fight-step:first-child::before {
+    display: none;
+  }
+
+  .first-fight-step-number {
+    font-size: 72px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .first-fight-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .first-fight-intro {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .first-fight-title {
+    font-size: clamp(36px, 8vw, 56px);
+  }
+
+  .first-fight-description {
+    font-size: 16px;
+  }
+
+  .first-fight-step {
+    gap: 20px;
+  }
+
+  .first-fight-step-number {
+    font-size: 56px;
+  }
+
+  .first-fight-step-title {
+    font-size: 24px;
+  }
+
+  .first-fight-step-description {
+    font-size: 14px;
+  }
+
+  .first-fight-button {
+    width: 100%;
+    min-height: 64px;
+    margin-top: 40px;
+    padding: 16px;
+    font-size: 18px;
+  }
+}

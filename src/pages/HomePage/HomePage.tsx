@@ -4,6 +4,8 @@ import { WhatIsHMB } from '../../sections/HomePageSections/WhatIsHMB/WhatIsHMB';
 import { WhyJoin } from '../../sections/HomePageSections/WhyJoin/WhyJoin';
 import { FindAcademy } from '../../sections/HomePageSections/FindAcademy/FindAcademy';
 import { NextBattle } from '../../sections/HomePageSections/NextBattle/NextBattle';
+import { FirstFight } from '../../sections/HomePageSections/FirstFight/FirstFight';
+import { BringAcademy } from '../../sections/HomePageSections/BringAcademy/BringAcademy';
 
 export function HomePage() {
   return (
@@ -14,6 +16,8 @@ export function HomePage() {
       <WhyJoin />
       <FindAcademy />
       <NextBattle />
+      <FirstFight />
+      <BringAcademy />
     </main>
   );
 }
