@@ -226,6 +226,13 @@
   transform: translateX(6px);
 }
 
+@media (max-width: 1640px) {
+  .first-fight-step {
+    padding: 35px 35px;
+    gap: 20px;
+  }
+}
+
 /* TABLET */
 @media (max-width: 1024px) {
   .first-fight,
